@@ -56,6 +56,7 @@ public class PgnHolderTest {
 
     }
 
+   
     /**
      * Test pgn load 2.
      *
@@ -454,7 +455,7 @@ public class PgnHolderTest {
                 "33. Bb5+ axb5 34. Nxf6# 1-0\n\n";
 
 
-        PgnHolder pgn = new PgnHolder(null);
+        PgnHolder pgn = new PgnHolder();
         pgn.loadPgn(lines);
         Game game = pgn.getGames().get(0);
         game.loadMoveText();
@@ -477,6 +478,7 @@ public class PgnHolderTest {
                 "d7c5 a1d1 b7c6 e5e6 f7f6 f3h4 c6a4 h4g6 c5e6 e1e6 e7d6 f4g4 d6h2 g1h2 d8c7 h2g1 c7g7 e6e7 e8e7 g6e7 " +
                 "g8f7 g4g7 f7e8 e7d5 a8a7 d3b5 a6b5 d5f6", game.getHalfMoves().toString());
     }
+
 
     @Test
     public void testBoardHashKeyConsistency() throws Exception {

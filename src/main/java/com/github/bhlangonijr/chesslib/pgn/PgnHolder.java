@@ -59,6 +59,14 @@ public class PgnHolder {
     }
 
     /**
+     * Construcs a new PGN holder when loading from String PGN directly
+     */
+    public PgnHolder(){
+        setFileName(null);
+        setLazyLoad(false);
+    }
+
+    /**
      * Resets the status of the holder, cleaning up all data previously stored.
      */
     public void cleanUp() {

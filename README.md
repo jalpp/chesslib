@@ -246,6 +246,39 @@ The output should be something like:
 1 e4 Ponomariov plays 1. e4 in much the same way as any of the other top-level GMs.
 1..e6 Now, along with Pe4 there is an indication Black will place pawns on light-color squares to prevent Bf1 from ever being dangerous. White will probably have to meet 2...d5 with e4-e5 to open the d3-h7 diagonal. So, White needs a Pd4 to support Pe5.
 ```
+You can also load PGN from string directly in memory, when PGN file is not needed
+
+```java
+
+String pgnText = """ 
+
+[Event "CCT 13"]
+[Site "FICS, San Jose, California US"]
+[Date "2011.01.29"]
+[Round "2"]
+[White "Rookie"]
+[Black "JabbaChess"]
+[Result "1-0"]
+[ECO "C00"]
+[WhiteElo "2285"]
+[BlackElo "1680"]
+[Annotator "Albert Silver"]
+[PlyCount "67"]
+[EventDate "2011.??.??"]
+[TimeControl "3000+3"]
+
+1. e4 e6 2. d4 a6 3. Nf3 d5 4. exd5 exd5 5. Bd3 Nc6 6. O-O Nf6 7. Re1+ Be7 8.
+c3 O-O 9. Nbd2 Re8 10. Ne5 Nxe5 11. dxe5 Nd7 12. Nb3 g6 13. Nd4 c5 14. Nf3 b5
+...
+"""
+// file name does not need to be provided
+PgnHolder pgn = new PgnHolder();
+
+pgn.loadPgn(pgnText);
+
+// can access PGN data just like file
+
+```
 
 # <a name="Advanced_usage"></a> Advanced usage
 
